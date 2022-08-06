@@ -1,0 +1,99 @@
+.content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: min-content;
+    grid-gap: 8rem;
+    padding: 12rem 14rem 0;
+
+    &__section {
+        display: grid;
+        grid-template-columns: 1fr 45rem;
+        grid-auto-rows: min-content;
+        align-items: center;
+        grid-gap: 5rem;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__section--middle {
+        grid-template-columns: 45rem 1fr;
+    }
+
+    // &__section--top,
+    // &__section--middle,
+    // &__section--bottom {
+
+    // }
+
+    &__desc {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: min-content;
+        grid-gap: 2rem;
+
+        .title {
+            font-size: 3.8rem;
+            font-weight: 700;
+        }
+
+        .paraph {
+            font-size: 1.6rem;
+            font-weight: 400;
+        }
+
+        .step {
+            font-size: 1.6rem;
+            font-weight: 600;
+            border-spacing: 1rem 1.2rem;
+
+            & tr td:first-child {
+                position: relative;
+                text-align: center;
+            }
+
+            & tr td:last-child {
+                padding-left: 2.5rem;
+            }
+
+            & tr td:first-child::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: transparent;
+                border-radius: 50%;
+                border: 1.4px solid $color-secondary;
+                width: 3rem;
+                height: 3rem;
+                z-index: -1;
+            }
+        }
+
+        .link,
+        .link:visited {
+            color: $color-secondary;
+            font-size: 2rem;
+            font-weight: 600;
+            text-decoration: none;
+            justify-self: start;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+            img {
+                width: 3rem;
+                height: 3rem;
+                transform: translateY(1px);
+            }
+        }
+    }
+}

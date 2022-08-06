@@ -1,0 +1,60 @@
+.profil {
+    display: grid;
+    grid-template-columns: 50%;
+    grid-gap: 3rem;
+    justify-content: center;
+    padding: 4rem 0;
+
+    &__info {
+        display: grid;
+        grid-template-columns: min-content 1fr;
+        grid-auto-rows: min-content;
+        align-items: center;
+        grid-gap: 3rem;
+
+        img {
+            border-radius: 50%;
+        }
+    }
+
+    &__info-detail {
+        h1 {
+            font-size: 3rem;
+        }
+        div {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        div h2 {
+            font-size: 1.6rem;
+            font-weight: 500;
+        }
+    }
+
+    &__info-status {
+        
+    }
+
+    &__info-kota {
+       
+    }
+
+    &__input {
+
+    }
+
+    &__form {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 1.5rem;
+    }
+
+    &__input-group {
+        @include form;
+    }
+
+    &__btn {
+        @include form-btn;
+    }
+}

@@ -1,0 +1,131 @@
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 14rem;
+    background-color: $color-primary;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+
+    &__group {
+        display: grid;
+        grid-template-columns: repeat(3, min-content);
+        align-items: center;
+        grid-gap: 3rem;
+    }
+
+    &__logo {
+
+    }
+
+    &__link,
+    &__link:visited {
+        color: $color-compliment;
+        transition: .1s ease;
+
+        &.active {
+            color: $color-secondary;
+            font-weight: 700;
+        }
+
+        &:hover {
+            color: $color-secondary;
+        }
+    }
+
+    &__btn-sign,
+    &__btn-sign:visited {
+        background-color: $color-ternary;
+        padding: 8px 12px;
+        color: $color-secondary;
+        border-radius: 4px;
+
+        &:hover {
+            background-color: $color-btn-hovered;
+        }
+    }
+
+    &__link,
+    &__btn-sign {
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.6rem;
+        transition: .15s ease;
+    }
+}
+
+.navprofile {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    grid-gap: 2rem;
+
+    &__btn,
+    &__btn:visited {
+        @include button;
+        text-decoration: none;
+    }
+
+    &__user {
+        @extend .navprofile;
+        grid-gap: 1rem;
+        position: relative;
+        padding: 1.2rem;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: .1s ease;
+
+        // &:hover {
+        //     background-color: rgb(248, 248, 248);
+        // }
+
+        &:hover .navprofile__option {
+            transform: translate(1.2rem, 0);
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &__img {
+        width: 3.2rem;
+        height: 3.2rem;
+        border-radius: 50%;
+    }
+
+    &__username {
+        font-weight: 600;
+        font-size: 1.6rem;
+    }
+
+    &__option {
+        position: absolute;
+        top: 110%;
+        left: 0;
+        width: 100%;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: 1fr;
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, .2);
+        border-radius: 4px;
+        background-color: $color-primary;
+        transform: translate(1.2rem, -1rem);
+        opacity: 0;
+        visibility: hidden;
+        transition: .2s ease;
+        overflow: hidden;
+    }
+
+    &__link,
+    &__link:visited {
+        @extend .navprofile__username;
+        font-size: 1.4rem;
+        text-decoration: none;
+        color: $color-secondary;
+        padding: 1rem 1.2rem;
+        transition: .1s ease;
+
+        &:hover {
+            background-color: rgb(230, 230, 230);
+        }
+    }
+}

@@ -1,0 +1,91 @@
+.header {
+    min-height: calc(100vh - 72px);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: min-content;
+    justify-items: center;
+    align-content: center;
+    grid-gap: 3rem;
+    background-image:  linear-gradient(0deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('./banner.jpg');
+    background-position-y: 60%;
+    background-size: cover;
+
+    &__title {
+        width: 65%;
+        text-align: center;
+        font-size: 4rem;
+        font-weight: 700;
+        color: $color-primary;
+    }
+
+    &__form-group {
+        padding: 2rem 2.4rem;
+        background-color: $color-primary;
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+    }
+    
+    &__form {
+        display: grid;
+        grid-template-columns: repeat(4, 20rem);
+        align-items: center;
+        grid-gap: 2.5rem;
+
+        .select-input {
+            font-size: 1.4rem;
+            color: $color-secondary;
+            font-weight: 500;
+        }
+        
+        .select-input > div {
+            cursor: pointer;
+        }
+
+        .form__cabor {
+
+            option {
+                background-color: #0D0D0D;
+                margin-bottom: 1rem;
+                color: #fff;
+                border: none;
+                outline: none;
+            }
+        }
+
+        .form__lokasi {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            img {
+                width: 1.75rem;
+            }
+
+            input {
+                border: none;
+                outline: none;
+                font-family: inherit;
+            }
+        }
+
+        // .form__status {
+
+        // }
+
+        .form__cabor,
+        .form__lokasi,
+        .form__status {
+            border: none;
+            outline: none;
+            font-family: $font-primary;
+            border: 0.8px solid #0D0D0D;
+            border-radius: 4px;
+            padding: 1.6rem 1.2rem;
+            color: $color-compliment;
+        }
+
+        .form__btn {
+            @include button;
+        }
+    }
+}

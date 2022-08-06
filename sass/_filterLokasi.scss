@@ -1,0 +1,81 @@
+.lokasi {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: min-content;
+    grid-gap: 2.5rem;
+
+    &__title {
+        font-size: 2.4rem;
+    }
+
+    &__form {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(155px, 1fr));
+        grid-auto-rows: min-content;
+        grid-gap: 2rem;
+    }
+
+    &__input-grup {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        .select-input {
+            font-size: 1.2rem;
+            color: $color-secondary;
+            font-weight: 500;
+        }
+
+        .select-input > div {
+            cursor: pointer;
+        }
+        
+        label {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: $color-secondary;
+            cursor: auto;
+        }
+    }
+
+    &__cta {
+        justify-self: end;
+        display: flex;
+        gap: 1rem;
+        margin-top: 4rem;
+
+        button {
+            @include button;
+            padding: .6rem 1rem;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .cancel {
+            background-color: #fff;
+            &:hover {
+                background-color: #fff;
+            }
+        }
+
+        .submit {
+
+        }
+    }
+}
+
+.overlayLokasi {
+    position: fixed;
+    inset: 0 0 0 0;
+    background-color: rgba(#000, .5);
+    backdrop-filter: blur(3px);
+    visibility: hidden;
+    opacity: 0;
+    z-index: 3;
+    cursor: pointer;
+    transition: .15s ease;
+}
+
+.lokasiPopUp {
+    visibility: visible;
+    opacity: 1;
+}

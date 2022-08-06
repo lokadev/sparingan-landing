@@ -1,0 +1,79 @@
+@mixin button {
+    outline: none;
+    border: none;
+    font-family: $font-primary;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: inherit;
+    background-color: $color-ternary;
+    padding: .8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .1s ease;
+        &:hover {
+            background-color: $color-btn-hovered;
+        }
+}
+
+
+@mixin input {
+    font-family: $font-primary;
+    padding: .8rem .6rem;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid rgba(13, 13, 13, .5);
+    transition: .2s ease;
+            
+        &:focus {
+            border: 1.2px solid rgba(13, 13, 13, 1);
+        }
+}
+
+@mixin form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: .5rem;
+
+        .select-input {
+            font-size: 1.4rem;
+        }
+
+        .select-input > div {
+            border: 1px solid rgba(13, 13, 13, .5);
+            cursor: pointer;
+        }
+
+        label {
+            font-weight: 600;
+            font-size: 1.4rem;
+        }
+
+        input,
+        .formMatch__location {
+            @include input;
+            font-size: 1.4rem;
+        }
+
+        .formMatch__location {
+            padding-right: 1rem;
+        }
+}
+
+@mixin form-btn {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+        
+        &-submit,
+        &-cancel {
+            @include button;
+        }
+
+        &-cancel {
+            background-color: transparent;
+            border: .8px solid $color-secondary;
+            &:hover {
+                background-color: transparent;
+            }
+        }
+}

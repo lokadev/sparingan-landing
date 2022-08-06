@@ -1,0 +1,18 @@
+.footer {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    grid-auto-rows: min-content;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 0;
+    border-top: 2px solid $color-secondary;
+
+    &__logo {
+        width: 15rem;
+    }
+
+    &__copyright {
+        font-size: 1.4rem;
+        font-weight: 400;
+    }
+}
